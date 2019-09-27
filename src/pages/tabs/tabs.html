@@ -1,5 +1,18 @@
 <ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="custom-home"></ion-tab>
+  <!-- <ion-tab [root]="tab2Root" tabTitle="Saldo" tabIcon="custom-carteira"></ion-tab> -->
+  <ion-fab center bottom>
+    <button ion-fab (click)="presentLancamento()" class="popUp"><ion-icon name="add"></ion-icon></button>
+  <!-- <ion-fab-list side="top" class="popUp">
+    <button ion-button full class='login' center>Compra</button>
+    <button ion-button full class='login' center>Venda</button>
+    <button ion-button full class='login' center>Lançamento</button>
+  </ion-fab-list> -->
+
+  </ion-fab>
+  <ion-fab right top padding-top>
+    <button ion-fab (click)="presentProfile()" class="popUp"><ion-icon name="contact"></ion-icon></button>
+  </ion-fab>
+  <ion-tab [root]="tab3Root" tabTitle="Balanco" tabIcon="custom-gado"></ion-tab>
+  <!-- <ion-tab [root]="tab4Root" tabTitle="Perfil" tabIcon="custom-conta"></ion-tab> -->
 </ion-tabs>

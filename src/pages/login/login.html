@@ -1,0 +1,17 @@
+<ion-content class="paddingContent">
+  <ion-list>
+    <ion-item no-lines>
+      <ion-icon name="custom-logo" id="logo"></ion-icon>
+      <!-- <img src="../../assets/imgs/Logo.svg" alt="" class="logo"/> -->
+    </ion-item>
+    <ion-item style="border-bottom:none">
+      <ion-label fixed>Usuário</ion-label>
+      <ion-input type='text' [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type='password' [(ngModel)]="user.pw"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="loginUser()" id='login' center>ENTRAR</button>
+</ion-content>

@@ -1,0 +1,29 @@
+page-despesa {
+  ion-navbar{
+    background-color: #C12038;
+    color: white;
+  }
+  .toolbar-background-md {
+    background-color: #C12038;
+    color: white;
+  }
+  .toolbar-title-md {
+    padding: 1em 0;
+    color: white;
+  }
+  .separador{
+    color: #C12038;
+    background-color: #C12038;
+  }
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  #finalizar{
+    background-color: #EA1F3D;
+    font-size: 14pt;
+    padding: 2em;
+    // width: 60%;
+    border-radius: 1em;
+  }
+}

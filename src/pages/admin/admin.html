@@ -1,0 +1,21 @@
+<!-- <ion-tabs>
+  <ion-tab [root]="homeAdminRoot" tabTitle="Home" tabIcon="custom-home"></ion-tab>
+  <ion-tab [root]="saldoAdminRoot" tabTitle="Saldo" tabIcon="custom-carteira"></ion-tab>
+  <ion-fab center bottom>
+    <button ion-fab (click)="presentPrompt()" class="popUp"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-tab [root]="balancoAdminRoot" tabTitle="Balanco" tabIcon="custom-gado"></ion-tab>
+  <ion-tab [root]="perfilAdminRoot" tabTitle="Perfil" tabIcon="custom-conta"></ion-tab>
+</ion-tabs> -->
+<ion-tabs>
+  <ion-tab [root]="homeAdminRoot" tabTitle="Home" tabIcon="custom-home"></ion-tab>
+  <!-- <ion-tab [root]="tab2Root" tabTitle="Saldo" tabIcon="custom-carteira"></ion-tab> -->
+  <ion-fab center bottom>
+    <button ion-fab (click)="presentLancamento()" class="popUp"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-fab right top padding-top>
+    <button ion-fab (click)="presentProfile()" class="popUp"><ion-icon name="contact"></ion-icon></button>
+  </ion-fab>
+  <ion-tab [root]="balancoAdminRoot" tabTitle="Balanco" tabIcon="custom-gado"></ion-tab>
+  <!-- <ion-tab [root]="tab4Root" tabTitle="Perfil" tabIcon="custom-conta"></ion-tab> -->
+</ion-tabs>

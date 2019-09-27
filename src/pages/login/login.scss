@@ -1,0 +1,37 @@
+page-login {
+  #login{
+    background-color: #EA1F3D;
+    font-size: 14pt;
+    padding: 2em;
+    // width: 60%;
+    border-radius: 1em;
+  }
+  .paddingContent{
+    padding: 0 16px;
+  }
+  .scroll-content{
+    overflow-y: hidden;
+    padding: 1.5em 3.5em;
+  }
+  .logo{
+    padding: 4em;
+  }
+  ion-item{
+    padding-left: 0!important;
+    // border-bottom: #f6f6f6!important;
+    // border-bottom-color: #a0b5a2!important;
+    // -webkit-box-shadow: inset 0 -1px 0 0 #a0b5a2!important;
+    // box-shadow: inset 0 -1px 0 0 #a0b5a2!important;
+  }
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #f6f6f6;
+    box-shadow: rgb(0, 0, 0) 0px -1px 0px 0px inset;
+}
+  #logo{
+    width: 50%;
+    height: 250px;
+    margin: 0 auto;
+    display: inherit;
+    color: #EA1F3D;
+  }
+}

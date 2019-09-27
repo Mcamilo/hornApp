@@ -1,0 +1,69 @@
+page-balanco-admin {
+  ion-navbar{
+    background-color: #C12038;
+    color: white;
+  }
+  .toolbar-background-md {
+    background-color: #C12038;
+    color: white;
+  }
+  .toolbar-title-md {
+    padding: 1em 0;
+    color: white;
+  }
+  .scroll-content{
+    color: white;
+    // background-color: #C12038;
+    margin-top: 75px!important;
+
+    font-size: 16px;
+    background-image: linear-gradient(#C12038,#a91e32);
+  }
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+  display: none;
+  }
+  ion-header::after {
+  background-image: none;
+  }
+  .tabs-md .tabbar {
+    background: rgba(193, 32, 56, 0.2);
+    color: #8C8C8C;
+  }
+  .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #8C8C8C;
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+  }
+  .centro{
+  text-align: center;
+  }
+  .direita{
+  text-align: right;
+  }
+  .total h1{
+  font-size: 3em!important;
+  }
+  .lancamentos{
+    color: #000;
+    background-color: #fff;
+    position: absolute;
+    padding: 1.3em;
+    left: 0;
+    // bottom: 0;
+  }
+  .lancamentos h3{
+    color: #7A7A7A;
+  }
+  .border{
+    border-bottom: 1px solid #7A7A7A;
+  }
+  .Entrada{
+    color: green;
+    text-align: right;
+  }
+  .Saida{
+    text-align: right;
+    color: red;
+  }
+}

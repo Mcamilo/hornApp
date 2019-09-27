@@ -1,0 +1,94 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align:center">{{balanco.acao}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="regular">
+    <h2 style="color:black;">Registro {{balanco.data}}</h2>
+    <ion-item>
+      <b>Usuario: </b>
+      {{balanco.usuario_origem}}
+    </ion-item>
+    <ion-item >
+      <b>Fazenda: </b>
+      {{balanco.fazenda}}
+    </ion-item>
+    <ion-item>
+      <b>Tipo do Animal:</b>
+      {{balanco.animal}}
+    </ion-item>
+    <ion-item>
+      <b>Quantidade:</b>
+      {{balanco.quantidade}}
+    </ion-item>
+    <ion-item>
+      <b>Observações:</b>
+      {{balanco.info}}
+    </ion-item>
+  </div>
+  <div *ngIf="transf">
+    <h2 style="color:black;">Registro {{balanco.data}}</h2>
+    <ion-item>
+      <b>Tipo do Animal:</b>
+
+      {{balanco.animal}}
+    </ion-item>
+    <ion-item>
+      <b>Quantidade:</b>
+
+      {{balanco.quantidade}}
+    </ion-item>
+
+    <br>
+
+    <ion-item>
+      <b>Fazenda Origem:</b>
+
+      {{balanco.fazenda_origem}}
+    </ion-item>
+    <ion-item>
+      <b>Usuário Origem:</b>
+
+      {{balanco.usuario_origem}}
+    </ion-item>
+    <ion-item>
+      <b>Local Origem:</b>
+
+      {{balanco.local_origem}}
+    </ion-item>
+
+    <br>
+
+    <ion-item>
+      <b>Fazenda Destino:</b>
+
+      {{balanco.fazenda_destino}}
+    </ion-item>
+    <ion-item>
+      <b>Usuário Destino:</b>
+
+      {{balanco.usuario_destino}}
+    </ion-item>
+    <ion-item>
+      <b>Local Destino:</b>
+
+      {{balanco.local_destino}}
+    </ion-item>
+
+    <ion-item>
+      <b>Observações:</b>
+
+      {{balanco.info}}
+    </ion-item>
+  </div>
+  <ion-item margin-top>
+    <button ion-button full center style="background-color: #EA1F3D" (click)="dismiss(balanco.id)">Excluir</button>
+  <br>
+  <br>
+    <button ion-button full (click)="dismiss('nada')" id='finalizar' center>Fechar</button>
+  </ion-item>
+</ion-content>

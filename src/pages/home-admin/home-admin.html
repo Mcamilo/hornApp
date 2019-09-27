@@ -1,0 +1,102 @@
+<ion-header no-border>
+
+  <ion-navbar padding-top>
+    <ion-title text-center>Home Admin</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime min="2018" displayFormat="MM YYYY" [(ngModel)]="myDate" (ngModelChange)="onChange($event)"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <div padding>
+  <ion-segment [(ngModel)]="home">
+    <ion-segment-button value="individual">
+      Individual
+    </ion-segment-button>
+    <ion-segment-button value="coletivo">
+      Coletivo
+    </ion-segment-button>
+  </ion-segment>
+</div>
+<div [ngSwitch]="home">
+  <ion-grid *ngSwitchCase="'individual'">
+    <ion-row align-items-center margin-top>
+      <ion-col col-2></ion-col>
+      <ion-col col-8 class="centro"><h2>Balanço Geral</h2></ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col col-2></ion-col>
+      <ion-col col-8 class="centro total"><h1>{{total_balanco}}</h1></ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>Touro</ion-col>
+      <ion-col col-6 class="direita">{{touro}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>Boi</ion-col>
+      <ion-col col-6 class="direita">{{boi}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>Bezerro</ion-col>
+      <ion-col col-6 class="direita">{{bezerro}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>Vaca de Leite</ion-col>
+      <ion-col col-6 class="direita">{{vaca_de_leite}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>Vaca de Corte</ion-col>
+      <ion-col col-6 class="direita">{{vaca_de_corte}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>Novilha</ion-col>
+      <ion-col col-6 class="direita">{{novilha}}</ion-col>
+    </ion-row>
+</ion-grid>
+
+<ion-grid *ngSwitchCase="'coletivo'">
+  <ion-row align-items-center margin-top>
+    <ion-col col-2></ion-col>
+    <ion-col col-8 class="centro"><h2>Balanço Geral</h2></ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+  <ion-row align-items-center>
+    <ion-col col-2></ion-col>
+    <ion-col col-8 class="centro total"><h1>{{total_balanco_coletivo}}</h1></ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>Touro</ion-col>
+    <ion-col col-6 class="direita">{{touro_coletivo}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>Boi</ion-col>
+    <ion-col col-6 class="direita">{{boi_coletivo}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>Bezerro</ion-col>
+    <ion-col col-6 class="direita">{{bezerro_coletivo}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>Vaca de Leite</ion-col>
+    <ion-col col-6 class="direita">{{vaca_de_leite_coletivo}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>Vaca de Corte</ion-col>
+    <ion-col col-6 class="direita">{{vaca_de_corte_coletivo}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>Novilha</ion-col>
+    <ion-col col-6 class="direita">{{novilha_coletivo}}</ion-col>
+  </ion-row>
+</ion-grid>
+</div>
+
+</ion-content>

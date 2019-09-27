@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ModalSaldoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>{{userId.type}} em {{userId.data}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+  <ion-row margin-top>
+    <ion-col col-6>A Pagar: </ion-col>
+    <ion-col col-6 class="direita">R$ {{userId.a_pagar}}</ion-col>
+  </ion-row>
+  <ion-row margin-top margin-bottom>
+    <ion-col col-6>Comissão:</ion-col>
+    <ion-col col-6 class="direita">R$ {{userId.comissao}}</ion-col>
+  </ion-row>
+  <ion-row margin-top margin-bottom>
+    <ion-col col-6>Frete:</ion-col>
+    <ion-col col-6 class="direita">R$ {{userId.frete}}</ion-col>
+  </ion-row>
+  <ion-row margin-top margin-bottom>
+    <ion-col col-6>Imposto:</ion-col>
+    <ion-col col-6 class="direita">R$ {{userId.impostos}}</ion-col>
+  </ion-row>
+  <ion-row margin-top margin-bottom>
+    <ion-col col-6>Total:</ion-col>
+    <ion-col col-6 class="direita">R$ {{userId.valor}}</ion-col>
+  </ion-row>
+</ion-grid>
+  <ion-item margin-top>
+    <button ion-button full (click)="dismiss()" id='finalizar' center>Fechar</button>
+  </ion-item>
+</ion-content>

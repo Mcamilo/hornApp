@@ -14,3 +14,87 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.popUp{
+  // position: absolute;
+  // width: 100vh;
+  background: white;
+  color: #C12038;
+  border:1px solid #C12038;
+}
+.tabs-md .tabbar {
+    background: rgba(193, 32, 56, 0.2);
+    color: #8C8C8C;
+    border-top: 1px solid #C12038;
+}
+.tab-button has-title has-icon activated{
+    background: rgba(193, 32, 56, 0.2);
+    color: #000;
+}
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #8C8C8C;
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+}
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+
+  &[class*="custom-carteira"] {
+    mask-image: url(../assets/carteira.svg);
+  }
+  &[class*="custom-gado"] {
+    mask-image: url(../assets/gado.svg);
+  }
+  &[class*="custom-conta"] {
+    mask-image: url(../assets/conta.svg);
+  }
+  &[class*="custom-home"] {
+    mask-image: url(../assets/home.svg);
+  }
+  &[class*="custom-logo"] {
+    mask-image: url(../assets/Logo.svg);
+  }
+}
+.alert-wrapper {
+	button.alert-button {
+    width: 100%;
+		text-align: center!important;
+    // color: #fff;
+	}
+}
+
+button.alert-button:nth-child(1) {
+    border-bottom: 1px solid #C12038;
+	}
+	button.alert-button:nth-child(2) {
+    border-bottom: 1px solid #C12038;
+	}
+
+.alert-wrapper{
+  background-color: #f6f6f6!important;
+  border-radius: 1em!important;
+}
+.alert-head{
+  display: none!important;
+}
+.alert-md .alert-button .button-inner {
+    -webkit-box-pack: end!important;
+    -webkit-justify-content: flex-end!important;
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+}
+.alert-message{
+  overflow-y: hidden!important;
+  // color: #fff!important;
+  padding: 1em;
+}
+.alert-md .alert-radio-group, .alert-md .alert-checkbox-group{
+  border-top: none!important;
+  max-height: none!important;
+}

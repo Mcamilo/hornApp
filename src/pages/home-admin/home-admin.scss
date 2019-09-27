@@ -1,0 +1,57 @@
+page-home-admin {
+  ion-navbar{
+    background-color: #C12038;
+    color: white;
+  }
+  .toolbar-background-md {
+    background-color: #C12038;
+    color: white;
+  }
+  .toolbar-title-md {
+    padding: 1em 0;
+    color: white;
+  }
+  .scroll-content{
+    color: white;
+    margin-top: 75px!important;
+    // background-color: #C12038;
+    font-size: 16px;
+    background-image: linear-gradient(#C12038,#a91e32);
+  }
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+  display: none;
+  }
+  ion-header::after {
+  background-image: none;
+  }
+  .tabs-md .tabbar {
+    background: rgba(193, 32, 56, 0.2);
+    color: #8C8C8C;
+  }
+  .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #8C8C8C;
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+  }
+  .centro{
+  text-align: center;
+  }
+  .direita{
+  text-align: right;
+  }
+  .total h1{
+  font-size: 3em!important;
+  }
+  .segment-md .segment-button{
+    color: #fff;
+    border: 1px solid;
+    border-radius: 1em;
+    margin: 0 2em;
+  }
+  .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+    border-color: #fff;
+    color: #C12038;
+    background-color: #fff;
+  }
+}

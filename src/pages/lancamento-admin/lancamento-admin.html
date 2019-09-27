@@ -1,0 +1,235 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Lançamento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form
+   [formGroup]="form"
+   (ngSubmit)="manage(form.value)">
+  <ion-list>
+  <ion-item>
+    <ion-label>Tipo de Ação</ion-label>
+    <ion-select formControlName="acao" [ngModel]="selectV" (ngModelChange)="onChange($event)" >
+      <ion-option value="Entrada Pasto">Entrada Pasto</ion-option>
+      <ion-option value="Entrada Confinamento">Entrada Confinamento</ion-option>
+      <ion-option value="Morte/Fatalidade">Morte/Fatalidade</ion-option>
+      <ion-option value="Nascimento">Nascimento</ion-option>
+      <ion-option value="Transferencia">Transferência</ion-option>
+      <ion-option value="Compra">Compra</ion-option>
+      <ion-option value="Venda">Venda</ion-option>
+    </ion-select>
+  </ion-item>
+  <!-- <hr class="separador"> -->
+<div *ngIf="regular">
+  <ion-item>
+    <ion-label>Usuário</ion-label>
+    <ion-select formControlName="usuario">
+      <ion-option value="SR">SR</ion-option>
+      <ion-option value="P7">P7</ion-option>
+      <ion-option value="J7">J7</ion-option>
+      <ion-option value="R2">R2</ion-option>
+    </ion-select>
+    <!-- <ion-label> {{transferencia.username}}</ion-label> -->
+  </ion-item>
+  <ion-item>
+    <ion-label>Selecionar Fazenda</ion-label>
+    <ion-select formControlName="fazenda">
+      <ion-option value="Arrendamento S. Ana">Arrendamento S. Ana</ion-option>
+      <ion-option value="Arrendamento 25 de Julho">Arrendamento 25 de Julho</ion-option>
+      <ion-option value="Fazenda Santa Izabel">Fazenda Santa Izabel</ion-option>
+      <ion-option value="Fazenda São José">Fazenda São Jose</ion-option>
+      <ion-option value="Fazenda Paulista">Fazenda Paulista</ion-option>
+      <ion-option value="Fazenda Acre">Fazenda Acre</ion-option>
+      <ion-option value="Fazenda Paraguai">Fazenda Paraguai</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Data do Evento</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" min="2018" formControlName="myDate"
+    month-names="janeiro, fevereiro, marco, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro"
+    month-short-names="jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez"
+    day-names="domingo, segunda-feira, terca-feira, quarta-feira, quinta-feira, sexta-feira, sabado"
+    day-short-names="dom, seg, ter, qua, qui, sex, sab"
+    ></ion-datetime>
+  </ion-item>
+  <!-- <hr class="separador"> -->
+  <ion-item>
+    <ion-label stacked>Informações Adicionais</ion-label>
+    <ion-textarea placeholder="Opcional" formControlName="info"></ion-textarea>
+  </ion-item>
+
+  <hr class="separador">
+
+  <div
+	        formArrayName="technologies"
+	        margin-bottom>
+  <section
+   [formGroupName]="i"
+   *ngFor="let tech of form.controls.technologies.controls; let i = index">
+    <ion-item-group>
+  <ion-item>
+    <ion-label>Tipo de Animal</ion-label>
+    <ion-select formControlName="animal">
+      <ion-option value="Touro">Touro</ion-option>
+      <ion-option value="Boi">Boi</ion-option>
+      <ion-option value="Bezerro">Bezerro</ion-option>
+      <ion-option value="Vaca de Leite">Vaca de Leite</ion-option>
+      <ion-option value="Vaca de Corte">Vaca de Corte</ion-option>
+      <ion-option value="Novilha">Novilha</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item margin-bottom>
+    <ion-label stacked>Quantidade</ion-label>
+    <ion-input type="text" placeholder="0" formControlName="quantidade" ></ion-input>
+  </ion-item>
+  <span
+                     float-right
+                     ion-button
+                     icon-left
+                     clear
+                     *ngIf="form.controls.technologies.length > 1"
+                     (click)="removeInputField(i)">
+                     <ion-icon name="close"></ion-icon>
+                     Remover
+                  </span>
+               </ion-item-group>
+            </section>
+         </div>
+
+         <span
+            ion-button
+            float-left
+            icon-left
+            clear
+            (click)="addNewInputField()">
+               <ion-icon name="add"></ion-icon>
+               Adicionar
+         </span>
+  <!-- <hr class="separador"> -->
+  <ion-item margin-top>
+    <button
+   	     ion-button
+   	     center
+   	     full
+   	     text-center
+         id = 'finalizar'
+   	     >Finalizar</button>
+  </ion-item>
+  </div>
+
+
+  <div *ngIf="transf">
+    <ion-item style="color: #CF2020">
+      Origem
+    </ion-item>
+    <ion-item>
+      <ion-label>Usuário de Origem</ion-label>
+      <ion-select formControlName="usuario_origem">
+        <ion-option value="SR">SR</ion-option>
+        <ion-option value="P7">P7</ion-option>
+        <ion-option value="J7">J7</ion-option>
+        <ion-option value="R2">R2</ion-option>
+      </ion-select>
+      <!-- <ion-label> {{transferencia.username}}</ion-label> -->
+    </ion-item>
+    <ion-item>
+      <ion-label>Selecionar Fazenda de Origem</ion-label>
+      <ion-select formControlName="fazenda_origem">
+        <ion-option value="Arrendamento S. Ana">Arrendamento S. Ana</ion-option>
+        <ion-option value="Arrendamento 25 de Julho">Arrendamento 25 de Julho</ion-option>
+        <ion-option value="Fazenda Santa Izabel">Fazenda Santa Izabel</ion-option>
+        <ion-option value="Fazenda São José">Fazenda São Jose</ion-option>
+        <ion-option value="Fazenda Paulista">Fazenda Paulista</ion-option>
+        <ion-option value="Fazenda Acre">Fazenda Acre</ion-option>
+        <ion-option value="Fazenda Paraguai">Fazenda Paraguai</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pasto ou Confinamento de Origem</ion-label>
+      <ion-select formControlName="local_origem">
+        <ion-option value="Pasto">Pasto</ion-option>
+        <ion-option value="Confinamento">Confinamento</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item style="color: #CF2020">
+      Destino
+    </ion-item>
+    <ion-item>
+      <ion-label>Usuário de Destino</ion-label>
+      <ion-select formControlName="usuario_destino">
+        <ion-option value="SR">SR</ion-option>
+        <ion-option value="P7">P7</ion-option>
+        <ion-option value="J7">J7</ion-option>
+        <ion-option value="R2">R2</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Selecionar Fazenda de Destino</ion-label>
+      <ion-select formControlName="fazenda_destino">
+        <ion-option value="Arrendamento S. Ana">Arrendamento S. Ana</ion-option>
+        <ion-option value="Arrendamento 25 de Julho">Arrendamento 25 de Julho</ion-option>
+        <ion-option value="Fazenda Santa Izabel">Fazenda Santa Izabel</ion-option>
+        <ion-option value="Fazenda São José">Fazenda São Jose</ion-option>
+        <ion-option value="Fazenda Paulista">Fazenda Paulista</ion-option>
+        <ion-option value="Fazenda Acre">Fazenda Acre</ion-option>
+        <ion-option value="Fazenda Paraguai">Fazenda Paraguai</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pasto ou Confinamento de Destino</ion-label>
+      <ion-select formControlName="local_destino">
+        <ion-option value="Pasto">Pasto</ion-option>
+        <ion-option value="Confinamento">Confinamento</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo de Animal</ion-label>
+      <ion-select formControlName="animal_transf">
+        <ion-option value="Touro">Touro</ion-option>
+        <ion-option value="Boi">Boi</ion-option>
+        <ion-option value="Bezerro">Bezerro</ion-option>
+        <ion-option value="Vaca de Leite">Vaca de Leite</ion-option>
+        <ion-option value="Vaca de Corte">Vaca de Corte</ion-option>
+        <ion-option value="Novilha">Novilha</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item margin-bottom>
+      <ion-label stacked>Quantidade</ion-label>
+      <ion-input type="text" placeholder="0" formControlName="quantidade_transf">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data do Evento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" min="2018" formControlName="data_transf"
+      month-names="janeiro, fevereiro, mar\u00e7o, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro, ..."
+      month-short-names="jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez, ..."
+      day-names="domingo, segunda-feira, ter\u00e7a-feira, quarta-feira, quinta-feira, sexta-feira, sabado, ..."
+      day-short-names="dom, seg, ter, qua, qui, sex, sab, ..."
+      >
+      </ion-datetime>
+    </ion-item>
+    <!-- <hr class="separador"> -->
+    <ion-item>
+      <ion-label stacked>Informações Adicionais</ion-label>
+      <ion-textarea placeholder="Opcional" formControlName="info_transf" >
+      </ion-textarea>
+    </ion-item>
+    <ion-item margin-top>
+      <button
+     	     ion-button
+     	     center
+     	     full
+     	     text-center
+           id = 'finalizar'
+     	     >Finalizar</button>
+    </ion-item>
+    </div>
+
+  </ion-list>
+  </form>
+
+</ion-content>
